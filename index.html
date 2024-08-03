@@ -7,31 +7,75 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <style>
-        .box{
-            width: 50%;
-            height: 50%;
+        .box1,.box2,.box3{
+            width: 250px;
+            height: 250px;
             background-color: blueviolet;
-            margin-top: 15px;
+            border-radius: 20px;
+       
             
         }
     </style>
 </head>
 <body>
-    <div class=" container">
-        <div class="box"></div>
-        <button id="btnHide" class=" btn text-capitalize btn-danger mt-2">hide</button>
-        <button id="btnShow" class="btn text-capitalize btn-success mt-2">show</button>
+    <div class=" container-fuild">
+       <div class=" row d-flex">
+        <div class="col-lg-4 col-md-4 p-2">
+            <center><div class="box1"></div></center>
+           <center>
+            <button id="btnHide" class=" btn text-capitalize btn-danger mt-2">hide</button>
+            <button id="btnShow" class="btn text-capitalize btn-success mt-2">show</button> 
+           </center>  
+        </div>
+        <div class=" col-4 p-2">
+            <center><div class="box2 bg-dark"></div></center>
+            <center>
+                <button id="btnup" class=" btn text-capitalize btn-danger mt-2">up</button>
+            <button id="btndown" class="btn text-capitalize btn-success mt-2">down</button>
+            <button id="btnToggle" class="btn  text-capitalize btn-success mt-2">toggle</button>
+            </center>
+        </div>
+        <div class=" col-4 p-2">
+            <div class=" col-4 p-2">
+                <center><div class="box3 bg-warning"></div></center>
+                <center class=" d-flex mx-2">
+                <button id="btnOut" class=" btn mx-3 text-capitalize btn-danger mt-2">fadeout</button>
+                <button id="btnIn" class="btn text-capitalize btn-success mt-2">fadein</button>
+                <button id="btnFade" class="btn mx-3 text-capitalize btn-success mt-2">fadetoggle</button>
+                </center>
+            </div>
+        </div>
+       </div>
     </div>
 </body>
 
 <script>
     $(document).ready(()=>{
         $("#btnHide").click(()=>{
-            $(".box").hide(1000);
+            $(".box1").hide(1000);
         })
         $("#btnShow").click(()=>{
-            $(".box").show(1000);
+            $(".box1").show(1000);
+        })
+        $("#btnup").click(()=>{
+            $(".box2").slideUp(1000);
+        })
+        $("#btndown").click(()=>{
+            $(".box2").slideDown(1000);
+        })
+        $("#btnToggle").click(()=>{
+            $(".box2").slideToggle(1000);
         });
+        $("#btnOut").click(()=>{
+            $(".box3").fadeOut(1000);
+        })
+        $("#btnIn").click(()=>{
+            $(".box3").fadeIn(1000);
+        })
+      $("#btnFade").click(()=>{
+        $(".box3").fadeToggle(1000);
+     });
+
     });
 </script>
 </html>
