@@ -50,6 +50,12 @@
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
             });
+            $("#input").on('keyup', function(){
+                var value = $(this).val().UpperCase();
+                $("#data tr").filter(function(){
+                    $(this).toggle($(this).tex().UpperCase().indexOf(value) > -1);
+                });
+            });
         });  
     </script>
 </body>
